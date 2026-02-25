@@ -460,7 +460,7 @@ func (p *PolicyProcessor) ApplyPoliciesOnResource() ([]engineapi.EngineResponse,
 					return nil, fmt.Errorf("failed to apply validating policies on resource %s (%w)", resource.GetName(), err)
 				}
 				for _, r := range reps.Policies {
-					if len(r.Rules) == 0 && canAutoGen(r.Policy.GetSpec().MatchConstraints){
+					if len(r.Rules) == 0 && canAutoGen(r.Policy.GetSpec().MatchConstraints) {
 						continue
 					}
 					response := engineapi.EngineResponse{
